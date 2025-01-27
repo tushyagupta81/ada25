@@ -2,8 +2,8 @@
 > Collection of all programs for ADA lab 2025
 
 ## Index
-- dsa24
-    - All DSA programs of previous semester
-- peak
-    - Peak finding algorights for 1D and 2D arrays
+- [x] peak - Peak finding algorights for 1D and 2D arrays
+    - [x] 1D
+    - [x] 2D
+- [x] Magic square - Sum of all rows, columns and diagonals is equals
 
