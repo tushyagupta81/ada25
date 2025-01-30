@@ -6,4 +6,5 @@
     - [x] 1D
     - [x] 2D
 - [x] Magic square - Sum of all rows, columns and diagonals is equals
+- [x] Cosine Similarity
 
