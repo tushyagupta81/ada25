@@ -1,4 +1,4 @@
-#include <iomanip>
+#include <chrono>
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -28,19 +28,26 @@ void magic_square(int n) {
       row = 0;
     }
   }
-  cout << "\n";
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
-      cout << setw(to_string(n*n).length() + 1) << a[i][j] << ", ";
-    }
-    cout << "\n";
-  }
+  // cout << "\n";
+  // for (int i = 0; i < n; i++) {
+  //   for (int j = 0; j < n; j++) {
+  //     cout << setw(to_string(n * n).length() + 1) << a[i][j] << ", ";
+  //   }
+  //   cout << "\n";
+  // }
 }
 
 int main() {
-  int n;
-  cout << "Enter size of magic square(odd): ";
-  cin >> n;
-  magic_square(n);
+  // int n;
+  // cout << "Enter size of magic square(odd): ";
+  // cin >> n;
+  for (int n = 5; n < 1000; n += 2) {
+    cout<<n;
+    auto start = std::chrono::high_resolution_clock::now();
+    magic_square(n);
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    cout<<" -> "<<duration.count()<<"\n";
+  }
   return 0;
 }

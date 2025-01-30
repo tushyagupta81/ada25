@@ -1,8 +1,7 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-int partition(int (&a)[], int l, int h) {
+int partition(vector<int> &a, int l, int h) {
   int pivot = a[l];
   int j = h, i = l + 1;
   while (j >= i) {
@@ -21,7 +20,7 @@ int partition(int (&a)[], int l, int h) {
   return i - 1;
 }
 
-void quicksort(int (&a)[], int l, int h) {
+void quicksort(vector<int> &a, int l, int h) {
   if (l < h) {
     int p = partition(a, l, h);
     quicksort(a, l, p - 1);
@@ -30,18 +29,38 @@ void quicksort(int (&a)[], int l, int h) {
 }
 
 int main() {
-  int n;
-  cout << "Enter length of array: ";
-  cin >> n;
-  int a[n];
-  for (int i = 0; i < n; i++) {
-    cin >> a[i];
-  }
+  // int n;
+  // cout << "Enter length of array: ";
+  // cin >> n;
+  // int a[n];
+  // for (int i = 0; i < n; i++) {
+  //   cin >> a[i];
+  // }
+  //
+  // quicksort(a, 0, n - 1);
+  //
+  // for (int i = 0; i < n; i++) {
+  //   cout << a[i] << " ";
+  // }
+  int n = 10;
+  for (int i = 0; i < 100; ++i) {
+    cout << n;
+    long res = 0;
+    for (int k = 0; k < 10; ++k) {
+      vector<int> a(n,0);
+      for (int j = 0; j < n; ++j) {
+        a[j] = rand();
+      }
 
-  quicksort(a, 0, n - 1);
-
-  for (int i = 0; i < n; i++) {
-    cout << a[i] << " ";
+      auto start = std::chrono::high_resolution_clock::now();
+      quicksort(a, 0, n - 1);
+      auto end = std::chrono::high_resolution_clock::now();
+      auto duration =
+          std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+      res += duration.count();
+    }
+    cout << " -> " << res/10 << "\n";
+    n *= 2;
   }
   return 0;
 }
