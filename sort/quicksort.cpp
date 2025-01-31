@@ -1,3 +1,4 @@
+#include <ctime>
 #include <iostream>
 using namespace std;
 
@@ -42,12 +43,13 @@ int main() {
   // for (int i = 0; i < n; i++) {
   //   cout << a[i] << " ";
   // }
-  int n = 10;
-  for (int i = 0; i < 100; ++i) {
+  srand(time(NULL));
+  cout<<"size,time\n";
+  for (int n = 100000; n <= 1000000; n += 100000) {
     cout << n;
     long res = 0;
     for (int k = 0; k < 10; ++k) {
-      vector<int> a(n,0);
+      vector<int> a(n, 0);
       for (int j = 0; j < n; ++j) {
         a[j] = rand();
       }
@@ -59,8 +61,7 @@ int main() {
           std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
       res += duration.count();
     }
-    cout << " -> " << res/10 << "\n";
-    n *= 2;
+    cout << "," << res / 10 << "\n";
   }
   return 0;
 }

@@ -41,13 +41,20 @@ int main() {
   // int n;
   // cout << "Enter size of magic square(odd): ";
   // cin >> n;
+  cout<<"size,time\n";
   for (int n = 5; n < 1000; n += 2) {
-    cout<<n;
-    auto start = std::chrono::high_resolution_clock::now();
-    magic_square(n);
-    auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-    cout<<" -> "<<duration.count()<<"\n";
+    cout << n;
+    long res = 0;
+    for (int m = 0; m < 10; ++m) {
+
+      auto start = std::chrono::high_resolution_clock::now();
+      magic_square(n);
+      auto end = std::chrono::high_resolution_clock::now();
+      auto duration =
+          std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+      res += duration.count();
+    }
+    cout << "," << res/10 << "\n";
   }
   return 0;
 }
