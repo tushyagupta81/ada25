@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-sorting_algo = "magic_square"
+sorting_algo = "knapsack"
 df = pd.read_csv(f"./{sorting_algo}.csv")
 
 
