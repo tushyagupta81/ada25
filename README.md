@@ -6,7 +6,11 @@
     - sorting of an array using a pivot ensuring the elements to the left of the pivot are smaller than the pivot and elements right of pivot are larger than it
     - The pivot is put in the position where it it should be when the whole array is sorted
     - Uses a recursive structure to sort each side split along the index of the pivot\
-      <img src="./plot/graphs/quicksort.png" alt="quicksort" width="600px"/>
+    <img src="./plot/graphs/quicksort.png" alt="quicksort" width="600px"/>
+- [x] Iterative Quicksort
+    - Quicksort in iterative form
+    - Reduces the size of stack used
+    <img src="./plot/graphs/iterative_quicksort.png" alt="iterative quicksort" width="600px"/>
 - [x] peak - Peak finding algorights for 1D and 2D arrays
     - Finding an element which is >= to its neighbours
     - [x] 1D 
@@ -26,3 +30,9 @@
     - The fractional part allows us to pick out items in fraction
         - For example if we have a capacity of 10 and the item weights 20 we can take out 10 out the weight instead of leaving that item and going to the next
     <img src="./plot/graphs/knapsack.png" alt="knapsack" width="600px" />
+- [x] Job Scheduling
+    - Schedule all jobs for the day ensuring maximum number of jobs are done
+    - FCFS, SJF and sorting by final_time used
+    <img src="./plot/graphs/scheduling.png" alt="knapsack" width="600px" />
+    - Time complexity of SJF is very high due to checking of availibility of that job
+    <img src="./plot/graphs/scheduling_time.png" alt="knapsack" width="600px" />

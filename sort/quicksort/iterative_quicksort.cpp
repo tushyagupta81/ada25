@@ -1,5 +1,6 @@
 #include <ctime>
 #include <iostream>
+#include <stack>
 using namespace std;
 
 int partition(vector<int> &a, int l, int h) {
@@ -21,30 +22,47 @@ int partition(vector<int> &a, int l, int h) {
   return i - 1;
 }
 
-void quicksort(vector<int> &a, int l, int h) {
-  if (l < h) {
-    int p = partition(a, l, h);
-    quicksort(a, l, p - 1);
-    quicksort(a, p + 1, h);
-  }
-}
-
 int main() {
   // int n;
   // cout << "Enter length of array: ";
   // cin >> n;
-  // int a[n];
-  // for (int i = 0; i < n; i++) {
-  //   cin >> a[i];
-  // }
+  // vector<int> a(n);
+  // // for (int i = 0; i < n; i++) {
+  // //   cin >> a[i];
+  // // }
   //
-  // quicksort(a, 0, n - 1);
+  // for (int j = 0; j < n; ++j) {
+  //   a[j] = rand();
+  // }
+  // stack<int> s;
+  // int l = 0;
+  // int h = n - 1;
+  // do {
+  //   while (l < h) {
+  //     int j = partition(a, l, h);
+  //     if (l - j < h) {
+  //       h = j - 1;
+  //       s.push(j - 1);
+  //       s.push(l);
+  //     } else {
+  //       l = j + 1;
+  //       s.push(h);
+  //       s.push(j + 1);
+  //     }
+  //   }
+  //   l = s.top();
+  //   s.pop();
+  //   h = s.top();
+  //   s.pop();
+  //
+  // } while (!s.empty());
   //
   // for (int i = 0; i < n; i++) {
   //   cout << a[i] << " ";
   // }
+
   srand(time(NULL));
-  cout<<"size,time\n";
+  cout << "size,time\n";
   for (int n = 100000; n <= 1000000; n += 100000) {
     cout << n;
     long res = 0;
@@ -55,7 +73,28 @@ int main() {
       }
 
       auto start = std::chrono::high_resolution_clock::now();
-      quicksort(a, 0, n - 1);
+      std::stack<int> s;
+      int l = 0;
+      int h = n;
+      do {
+        while (l < h) {
+          int j = partition(a, l, h);
+          if (l - j < h) {
+            h = j - 1;
+            s.push(j - 1);
+            s.push(l);
+          } else {
+            l = j + 1;
+            s.push(h);
+            s.push(j + 1);
+          }
+        }
+        l = s.top();
+        s.pop();
+        h = s.top();
+        s.pop();
+
+      } while (!s.empty());
       auto end = std::chrono::high_resolution_clock::now();
       auto duration =
           std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
