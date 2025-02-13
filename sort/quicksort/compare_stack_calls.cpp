@@ -43,7 +43,7 @@ int main() {
   cout << "size,stack_call_recursive,stack_call_iterative\n";
   for (int n = 100000; n <= 1000000; n += 100000) {
     cout << n;
-    vector<int> a(n, 0),b(n,0);
+    vector<int> a(n, 0), b(n, 0);
     for (int j = 0; j < n; ++j) {
       a[j] = b[j] = rand();
     }
@@ -73,13 +73,16 @@ int main() {
           s.push(j + 1);
         }
       }
+      if (s.empty()) {
+        break;
+      }
       l = s.top();
       s.pop();
       h = s.top();
       s.pop();
 
-    } while (!s.empty());
-    cout << ", " << maxStack2/2 << "\n";
+    } while (true);
+    cout << ", " << maxStack2 / 2 << "\n";
   }
   return 0;
 }

@@ -36,3 +36,11 @@
     <img src="./plot/graphs/scheduling.png" alt="knapsack" width="600px" />
     - Time complexity of SJF is very high due to checking of availibility of that job
     <img src="./plot/graphs/scheduling_time.png" alt="knapsack" width="600px" />
+- [ ] Matrix multiplication
+    - [x] Conventional Method
+        - Using divide and conquer to break the matrix into smaller parts and multiplying them to get the resulting martix
+    - [ ] Strassen's matrix multiplication
+        - turn the O(n<sup>3</sup>) algo into a O(n<sup>2.81</sup>) algo
+- [ ] Find all possible triangles
+- [ ] Find if point lies in a triangle
+- [ ] Polygon Hull
