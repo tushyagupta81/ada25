@@ -41,6 +41,9 @@
         - Using divide and conquer to break the matrix into smaller parts and multiplying them to get the resulting martix
     - [ ] Strassen's matrix multiplication
         - turn the O(n<sup>3</sup>) algo into a O(n<sup>2.81</sup>) algo
+- [ ] Polygon Hull
+    - [x] QuickHull
+        - [x] Using aproch similar to quicksort we divide the problem into multiple triangles and seperately solve them\
+        <img src="./plot/graphs/quickhull.png" alt="quickhull" width="600px" />
 - [ ] Find all possible triangles
 - [ ] Find if point lies in a triangle
-- [ ] Polygon Hull
