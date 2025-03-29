@@ -1,6 +1,8 @@
+#include <chrono>
 #include <ctime>
 #include <iostream>
 #include <stack>
+#include <vector>
 using namespace std;
 
 int partition(vector<int> &a, int l, int h) {
@@ -75,25 +77,27 @@ int main() {
       auto start = std::chrono::high_resolution_clock::now();
       std::stack<int> s;
       int l = 0;
-      int h = n;
+      int h = n - 1;
+      s.push(h);
+      s.push(l);
       do {
-        while (l < h) {
-          int j = partition(a, l, h);
-          if (l - j < h) {
-            h = j - 1;
-            s.push(j - 1);
-            s.push(l);
-          } else {
-            l = j + 1;
-            s.push(h);
-            s.push(j + 1);
-          }
-        }
         l = s.top();
         s.pop();
         h = s.top();
         s.pop();
 
+        while (l < h) {
+          int j = partition(a, l, h);
+          if (std::abs(l - j) < std::abs(h - j)) {
+            s.push(h);
+            s.push(j + 1);
+            h = j - 1;
+          } else {
+            s.push(j - 1);
+            s.push(l);
+            l = j + 1;
+          }
+        }
       } while (!s.empty());
       auto end = std::chrono::high_resolution_clock::now();
       auto duration =
