@@ -52,7 +52,11 @@
 - [x] Dijkastra
     - Find the shortest path from source to sink
 - [ ] Kruskals
-- [ ] Prims
+    - Minimum spanning tree
+- [x] Prims
+    - Minimum spanning tree\
+    <img src="./plot/graphs/prims_graph.png" alt="prims graph" width="400px" />
+    <img src="./plot/graphs/prims_tree.png" alt="prims tree" width="400px" />
 - [x] Multistage graph
     - A grpah that has a single starting node and a single ending node
     - Find out the cost to go to from source to sink from any node
