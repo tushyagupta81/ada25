@@ -11,12 +11,16 @@
     - Quicksort in iterative form
     - Reduces the size of stack used
     <img src="./plot/graphs/iterative_quicksort.png" alt="iterative quicksort" width="600px"/>
-- [x] peak - Peak finding algorights for 1D and 2D arrays
-    - Finding an element which is >= to its neighbours
+- [x] Comparing stack size of iterative vs recursive quicksort
+    <img src="./plot/graphs/compare_quicksort.png" alt="Comparing quicksort stack size" width="600px"/>
+- [x] Peak - Peak finding algorights for 1D and 2D arrays
+    - Finding an element which is larger to all its neighbours
     - [x] 1D 
         - Implemented using algo similar to Binary Search
+    <img src="./plot/graphs/peak1d.png" alt="peak1d" width="600px"/>
     - [x] 2D
         - Implemented using algo similar to Binary Search but works in a 2D array
+    <img src="./plot/graphs/peak2d.png" alt="peak2d" width="600px"/>
 - [x] Magic square(odd size) - Sum of all rows, columns and diagonals is equals
     - Creates a square matrix where the sum of all colums, rows and diagonals is equal
     - Follows a set pattern in where the numbers increase in a diagonal upwards to the left and goes down one when number is a multiple of the size
@@ -45,5 +49,14 @@
     - [x] QuickHull
         - [x] Using aproch similar to quicksort we divide the problem into multiple triangles and seperately solve them\
         <img src="./plot/graphs/quickhull.png" alt="quickhull" width="600px" />
-- [ ] Find all possible triangles
-- [ ] Find if point lies in a triangle
+- [x] Dijkastra
+    - Find the shortest path from source to sink
+- [ ] Kruskals
+- [ ] Prims
+- [x] Multistage graph
+    - A grpah that has a single starting node and a single ending node
+    - Find out the cost to go to from source to sink from any node
+    - [x] Forward method\
+        <img src="./plot/graphs/forward_multistage.png" alt="forward_multistage" width="600px" />
+    - [x] Backword method\
+        <img src="./plot/graphs/backward_multistage.png" alt="backward_multistage" width="600px" />

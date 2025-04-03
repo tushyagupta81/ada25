@@ -1,5 +1,7 @@
 #include <ctime>
 #include <iostream>
+#include <stack>
+#include <vector>
 using namespace std;
 
 int partition(vector<int> &a, int l, int h) {
@@ -55,33 +57,39 @@ int main() {
 
     std::stack<int> s;
     int l = 0;
-    int h = n;
+    int h = n - 1;
+    s.push(h);
+    s.push(l);
     int maxStack2 = 0;
+    int stack_size = 2;
     do {
-      if (s.size() > maxStack2) {
-        maxStack2 = s.size();
-      }
-      while (l < h) {
-        int j = partition(b, l, h);
-        if (l - j < h) {
-          h = j - 1;
-          s.push(j - 1);
-          s.push(l);
-        } else {
-          l = j + 1;
-          s.push(h);
-          s.push(j + 1);
-        }
-      }
-      if (s.empty()) {
-        break;
-      }
       l = s.top();
       s.pop();
+      stack_size--;
       h = s.top();
       s.pop();
+      stack_size--;
 
-    } while (true);
+      while (l < h) {
+        int j = partition(b, l, h);
+        if (std::abs(l - j) < std::abs(h - j)) {
+          s.push(h);
+          stack_size++;
+          s.push(j + 1);
+          stack_size++;
+          h = j - 1;
+        } else {
+          s.push(j - 1);
+          stack_size++;
+          s.push(l);
+          stack_size++;
+          l = j + 1;
+        }
+      }
+      if (stack_size > maxStack2) {
+        maxStack2 = stack_size;
+      }
+    } while (!s.empty());
     cout << ", " << maxStack2 / 2 << "\n";
   }
   return 0;
