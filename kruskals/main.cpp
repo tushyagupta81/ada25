@@ -5,7 +5,7 @@ int find(int *P, int i) {
   if (P[i] == -1) {
     return i;
   }
-  return P[i];
+  return find(P,P[i]);
 }
 
 void heapify(int **arr, int i, int n) {
@@ -41,7 +41,6 @@ void make_heap(int **arr, int n) {
 
 void union_(int *P, int u, int v) {
   P[u] = v;
-  P[v] = u;
 }
 
 void kruskals(int **cost, int **E, int *P, int n, int c, int **t) {
@@ -63,12 +62,10 @@ void kruskals(int **cost, int **E, int *P, int n, int c, int **t) {
       t[count][0] = u;
       t[count][1] = v;
       count++;
-      if (count == 2 * (n - 1)) {
+      if (count == (n - 1)) {
         return;
       }
-      union_(P, u, v);
-      for (int i = 0; i < n; i++) {
-      }
+      union_(P, j, k);
     }
   }
 }
@@ -108,15 +105,15 @@ int main() {
     P[i] = -1;
   }
 
-  int **t = new int *[2 * (n - 1)];
-  for (int i = 0; i < 2 * (n - 1); i++) {
+  int **t = new int *[n - 1];
+  for (int i = 0; i < n - 1; i++) {
     t[i] = new int[2];
   }
 
   kruskals(cost, E, P, n, c, t);
 
-  for (int i = 0; i < 2 * (n - 1); i++) {
-    cout << t[i][0] + 1 << " -> " << t[i][1] + 1 << "\n";
+  for (int i = 0; i < n - 1; i++) {
+    cout << t[i][0] + 1 << " -- " << t[i][1] + 1 << "\n";
   }
   return 0;
 }
