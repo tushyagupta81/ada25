@@ -2,11 +2,9 @@
 #include <ctime>
 #include <iomanip>
 #include <iostream>
-#include <vector>
 using namespace std;
 
-void reg_matrix(vector<vector<int> > &a, vector<vector<int> > &b,
-                vector<vector<int> > &c, int ax_offset, int ay_offset,
+void reg_matrix(int **a, int **b, int **c, int ax_offset, int ay_offset,
                 int bx_offset, int by_offset) {
   for (int i = 0; i < 2; i++) {
     for (int j = 0; j < 2; j++) {
@@ -18,26 +16,11 @@ void reg_matrix(vector<vector<int> > &a, vector<vector<int> > &b,
   }
 }
 
-void recurr_cut(vector<vector<int> > &a, vector<vector<int> > &b,
-                vector<vector<int> > &c, int axl, int axh, int ayl, int ayh,
+void recurr_cut(int **a, int **b, int **c, int axl, int axh, int ayl, int ayh,
                 int bxl, int bxh, int byl, int byh) {
   if (axl >= axh || bxl >= bxh || ayl >= ayh || byl >= byh) {
     return;
   }
-  // cout<<"yo\n";
-  // for (int i = ayl; i <= ayh; i++) {
-  //   for (int j = axl; j <= axh; j++) {
-  //     cout << a[i][j] << " ";
-  //   }
-  //   cout << "\n";
-  // }
-  // cout<<"yo2\n";
-  // for (int i = byl; i <= byh; i++) {
-  //   for (int j = bxl; j <= bxh; j++) {
-  //     cout << b[i][j] << " ";
-  //   }
-  //   cout << "\n";
-  // }
   if ((axh - axl == 1 && ayh - ayl == 1) ||
       (bxh - bxl == 1 && byh - byl == 1)) {
     reg_matrix(a, b, c, axl, ayl, bxl, byl);
@@ -62,17 +45,20 @@ void recurr_cut(vector<vector<int> > &a, vector<vector<int> > &b,
 
 int main() {
   int n = 16;
-  vector<vector<int> > a(n, vector<int>(n, 0));
-  vector<vector<int> > b(n, vector<int>(n, 0));
-  vector<vector<int> > c(n, vector<int>(n, 0));
+  int **a = new int *[n];
+  int **b = new int *[n];
+  int **c = new int *[n];
+  for(int i=0;i<n;i++){
+    a[i] = new int[n];
+    b[i] = new int[n];
+    c[i] = new int[n];
+  }
   srand(time(NULL));
 
   int max_range = 1000 - 1;
 
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
-      // a[i][j] = i + j;
-      // b[i][j] = i + j;
       a[i][j] = rand() % max_range + 1;
       b[i][j] = rand() % max_range + 1;
     }

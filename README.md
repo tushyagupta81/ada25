@@ -40,18 +40,19 @@
     <img src="./plot/graphs/scheduling.png" alt="knapsack" width="600px" />
     - Time complexity of SJF is very high due to checking of availibility of that job
     <img src="./plot/graphs/scheduling_time.png" alt="knapsack" width="600px" />
-- [ ] Matrix multiplication
+- [x] Matrix multiplication
     - [x] Conventional Method
         - Using divide and conquer to break the matrix into smaller parts and multiplying them to get the resulting martix
-    - [ ] Strassen's matrix multiplication
+    - [x] Strassen's matrix multiplication
         - turn the O(n<sup>3</sup>) algo into a O(n<sup>2.81</sup>) algo
-- [ ] Polygon Hull
+    <img src="./plot/graphs/strassens.png" alt="strassens" width="600px" />
+- [x] Polygon Hull
     - [x] QuickHull
         - [x] Using aproch similar to quicksort we divide the problem into multiple triangles and seperately solve them\
         <img src="./plot/graphs/quickhull.png" alt="quickhull" width="600px" />
 - [x] Dijkastra
     - Find the shortest path from source to sink
-- [ ] Kruskals
+- [x] Kruskals
     - Minimum spanning tree
 - [x] Prims
     - Minimum spanning tree\
