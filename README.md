@@ -5,7 +5,7 @@
 - [x] Quicksort
     - sorting of an array using a pivot ensuring the elements to the left of the pivot are smaller than the pivot and elements right of pivot are larger than it
     - The pivot is put in the position where it it should be when the whole array is sorted
-    - Uses a recursive structure to sort each side split along the index of the pivot\
+    - Uses a recursive structure to sort each side split along the index of the pivot
     <img src="./plot/graphs/quicksort.png" alt="quicksort" width="600px"/>
 - [x] Iterative Quicksort
     - Quicksort in iterative form
@@ -64,3 +64,5 @@
         <img src="./plot/graphs/forward_multistage.png" alt="forward_multistage" width="600px" />
     - [x] Backword method\
         <img src="./plot/graphs/backward_multistage.png" alt="backward_multistage" width="600px" />
+- [x] Matrix Chain Multiplication
+    - Find the order fo multiplication to reduce the number of scalar multiplications
