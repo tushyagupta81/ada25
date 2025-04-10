@@ -67,3 +67,7 @@
         <img src="./plot/graphs/backward_multistage.png" alt="backward_multistage" width="600px" />
 - [x] Matrix Chain Multiplication
     - Find the order fo multiplication to reduce the number of scalar multiplications
+- [x] Knapsack using sets(merge purge)
+    - Solved knapsack using sets and mergePurge technique
+    - Dynamic Programming solution
+- [ ] Traveling salesman
