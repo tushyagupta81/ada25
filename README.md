@@ -71,3 +71,5 @@
     - Solved knapsack using sets and mergePurge technique
     - Dynamic Programming solution
 - [ ] Traveling salesman
+- [x] Longest Common Subsequences
+    - Find the longest subsequence of two strings
