@@ -8,6 +8,7 @@
     - Uses a recursive structure to sort each side split along the index of the pivot
     <img src="./plot/graphs/quicksort.png" alt="quicksort" width="600px"/>
 - [x] Iterative Quicksort
+    - Similar to recursive quicksort but uses a stack to maintain the index of the places where the pivot cut the array
     - Quicksort in iterative form
     - Reduces the size of stack used
     <img src="./plot/graphs/iterative_quicksort.png" alt="iterative quicksort" width="600px"/>
@@ -52,9 +53,12 @@
         <img src="./plot/graphs/quickhull.png" alt="quickhull" width="600px" />
 - [x] Dijkastra
     - Find the shortest path from source to sink
+
 - [x] Kruskals
     - Minimum spanning tree
 - [x] Prims
+    - Finds one minimum edge using the merge sort technique and then find the shortest edge from the 2 selected vertex’s
+    - keeps on adding the shortest edges that extend from our visited vertex’s that don’t go to our visited vertexs
     - Minimum spanning tree\
     <img src="./plot/graphs/prims_graph.png" alt="prims graph" width="400px" />
     <img src="./plot/graphs/prims_tree.png" alt="prims tree" width="400px" />
@@ -67,9 +71,19 @@
         <img src="./plot/graphs/backward_multistage.png" alt="backward_multistage" width="600px" />
 - [x] Matrix Chain Multiplication
     - Find the order fo multiplication to reduce the number of scalar multiplications
+    - Find out the minimum cost of matrix multiplication by reducing the number of scalar multiplication needed
+    - Bundles together matrix multiplications using their sizes and shows the optimal order of multiplication
+    - Creates a 2D array containing the cost to multiply any combination of the matrixes
 - [x] Knapsack using sets(merge purge)
     - Solved knapsack using sets and mergePurge technique
     - Dynamic Programming solution
-- [ ] Traveling salesman
 - [x] Longest Common Subsequences
     - Find the longest subsequence of two strings
+- [x] NQueens
+    - Place N Queens on a NxN board
+    - Using a backtracking approach to start filling out from the starting square
+    - Backtrack on the given condition that col != col and row != row and (abs(j - k) != abs(x[j] - i)) which makes sure that the queens can’t see each other
+- [x] M Colorable graph
+    - Find out the ways in which a graph can be colored using M colors without the adjecent nodes having the same color
+    - Using a backtracking approach to try out all the colors on all nodes
+    - Backtrack on the given condition that color appears on one of the neighbours of the node.
