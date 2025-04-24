@@ -1,3 +1,4 @@
+#include <climits>
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
@@ -45,8 +46,6 @@ void sssp(int v, int *dist, int **cost, int n) {
 
 int main() {
   int n = 9;
-  int *visited = new int[n];
-  int *not_visitited = new int[n];
   int **adjency_matrix = new int *[n];
   int *dist = new int[n];
   for (int i = 0; i < n; i++) {

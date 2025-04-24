@@ -28,7 +28,7 @@ void mergePurge(set<pair<int, int>> a, set<pair<int, int>> b,
       }
       if (i->first <= j->first && i->second > j->second) {
         to_put = false;
-        continue;
+        break;
       }
     }
     if (to_put) {
