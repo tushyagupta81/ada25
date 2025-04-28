@@ -62,6 +62,10 @@
     - Minimum spanning tree\
     <img src="./plot/graphs/prims_graph.png" alt="prims graph" width="400px" />
     <img src="./plot/graphs/prims_tree.png" alt="prims tree" width="400px" />
+- [x] All Pair Shortest Path(Floyd-Warshall Algorithm)
+    - We find the minimum cost to go from any vertex to any other vertex
+    - We store the intermidiate result in the original adjency matrix or create a new one
+        - The values are updated if we find a new minimum cost
 - [x] Multistage graph
     - A grpah that has a single starting node and a single ending node
     - Find out the cost to go to from source to sink from any node
