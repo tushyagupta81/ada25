@@ -87,3 +87,14 @@
     - Find out the ways in which a graph can be colored using M colors without the adjecent nodes having the same color
     - Using a backtracking approach to try out all the colors on all nodes
     - Backtrack on the given condition that color appears on one of the neighbours of the node.
+- [x] Hamiltonian Graph
+    - Finding a path in traverses all the vertexs without repeating them
+    - Using the backtracking approach we try to explore all the path and return when we can't find a vertex to traverse to other vertexs without repeating an old one
+    - Gives out the correct order to traverse the graph to visit all the vertexs once
+- [x] Sum of subsets
+    - Finding all the subsets of a set whose sum is equal to a given value
+    - Assumes that we sort the starting array
+    - Using backtracking we try out all posible combinations for the subsets and quit when we - 
+        - Find that the remaining values are less than than what we require
+        - Current value generated + new value will tip us over the required ammount
+    - Gives out the elements that make up that valid tuple
