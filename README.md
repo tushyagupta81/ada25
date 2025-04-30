@@ -157,7 +157,7 @@
     - Using the backtracking approach we try to explore all the path and return when we can't find a vertex to traverse to other vertexs without repeating an old one
     - Gives out the correct order to traverse the graph to visit all the vertexs once
 - [x] Sum of subsets
-    - Time Complexity - O(n!)
+    - Time Complexity - O(2<sup>n</sup>)
     - Space Complexity - O(n)
     - Finding all the subsets of a set whose sum is equal to a given value
     - Assumes that we sort the starting array
